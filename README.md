@@ -54,10 +54,19 @@ extra_javascript:
     # - wavedrom.unpkg.js
     # - skin-default.js
     # above, place *.js in docs directory, or below from internet.
-    - https://cdn.jsdelivr.net/npm/wavedrom@2.1.2/wavedrom.unpkg.js
+    - https://cdn.jsdelivr.net/npm/wavedrom@3.5.0/wavedrom.unpkg.js
     - https://wavedrom.com/skins/default.js
 ```
 
+Also add the following if using **PyMdown SuperFences:**
+
+```
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: wavedrom
+          class: wavedrom
+```
 
 
 Demo
@@ -106,4 +115,3 @@ If you are feel to nice for this software, please donation to my
 <!--
 vi: ft=markdown:et:fdm=marker
 -->
-
