@@ -13,7 +13,10 @@ class MarkdownWavedromPlugin(BasePlugin):
     def on_post_page(self, output_content, config, **kwargs):
         # type: () -> Text
         soup = BeautifulSoup(output_content, 'html.parser')
-        sections = soup.find_all("code", class_="wavedrom")
+        sections = soup.select("pre.wavedrom code") \
+                or soup.select("pre.language-wavedrom code") \
+                or soup.find_all("code", class_="wavedrom") \
+                or soup.find_all("code", class_="language-wavedrom")
 
         f_exists = False
         for section in sections:
